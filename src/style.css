@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Variables ─────────────────────────────────────────── */
+:root {
+  --primary: #FD4766;
+  --accent:  #7644FF;
+  --blue:    #1C99FE;
+}
+
+/* Dark mode (default) */
+html, html.dark {
+  --bg:          #0e1525;
+  --bg-dark:     #091020;
+  --surface:     #131d30;
+  --surface-2:   #1a2540;
+  --border:      rgba(255,255,255,0.08);
+  --border-hover:rgba(255,255,255,0.16);
+  --text:        #ffffff;
+  --text-muted:  #94a3b8;
+  --text-subtle: rgba(255,255,255,0.35);
+  --input-bg:    #091020;
+  --nav-bg:      rgba(9,16,32,0.95);
+  --shadow:      rgba(0,0,0,0.4);
+  --scrollbar-track: #091020;
+}
+
+/* Light mode */
+html.light {
+  --bg:          #f0f4ff;
+  --bg-dark:     #e2e8f8;
+  --surface:     #ffffff;
+  --surface-2:   #f8faff;
+  --border:      rgba(0,0,0,0.08);
+  --border-hover:rgba(0,0,0,0.16);
+  --text:        #0f172a;
+  --text-muted:  #475569;
+  --text-subtle: rgba(0,0,0,0.3);
+  --input-bg:    #f8faff;
+  --nav-bg:      rgba(240,244,255,0.95);
+  --shadow:      rgba(0,0,0,0.08);
+  --scrollbar-track: #e2e8f8;
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  a { text-decoration: none; }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+  ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+}
+
+/* ── Components ────────────────────────────────────────────── */
+@layer components {
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           px-7 py-3 rounded-full text-sm font-semibold uppercase tracking-wider
+           text-white cursor-pointer border-0 transition-all duration-300
+           bg-gradient-to-r from-primary to-accent
+           shadow-lg shadow-primary/20
+           hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/40;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2
+           px-7 py-3 rounded-full text-sm font-semibold uppercase tracking-wider
+           bg-transparent transition-all duration-300
+           hover:-translate-y-0.5;
+    color: var(--text);
+    border: 2px solid var(--border-hover);
+  }
+  .btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  /* Cards */
+  .section-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    @apply rounded-xl transition-all duration-300;
+  }
+  .section-card:hover {
+    border-color: rgba(253,71,102,0.4);
+  }
+
+  /* Layout */
+  .page-wrapper {
+    @apply max-w-6xl mx-auto px-6 pt-28 pb-20;
+  }
+
+  /* Typography */
+  .section-title {
+    @apply text-4xl font-bold mb-3 leading-tight;
+    color: var(--text);
+  }
+  .section-title span { color: var(--primary); }
+
+  .section-sub {
+    @apply text-base max-w-xl mx-auto;
+    color: var(--text-muted);
+  }
+
+  /* Navbar link */
+  .nav-link-item {
+    @apply relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300
+           after:absolute after:bottom-1 after:left-1/2 after:-translate-x-1/2
+           after:w-0 after:h-0.5 after:bg-primary after:rounded-full
+           after:transition-all after:duration-300
+           hover:after:w-3/5;
+    color: var(--text-muted);
+  }
+  .nav-link-item:hover { color: var(--text); }
+  .nav-link-item.active {
+    color: var(--text);
+    @apply after:w-3/5;
+  }
+
+  /* Theme toggle button */
+  .theme-toggle {
+    @apply w-10 h-10 rounded-full flex items-center justify-center
+           transition-all duration-300 text-base;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+  }
+  .theme-toggle:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    @apply scale-110;
+  }
+
+  /* Form inputs */
+  .form-input {
+    @apply w-full rounded-xl px-4 py-3 text-sm outline-none
+           transition-all duration-200;
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  .form-input::placeholder { color: var(--text-subtle); }
+  .form-input:focus { border-color: var(--primary); }
+  .form-input.error { 
+    border-color: rgba(239,68,68,0.7);
+    background: rgba(239,68,68,0.05);
+  }
+  .form-input.valid { border-color: rgba(34,197,94,0.6); }
+}
