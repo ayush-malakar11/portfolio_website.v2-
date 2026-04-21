@@ -33,10 +33,10 @@ const EXPERIENCE = [
     period: 'May 2025 – Present',
     location: 'Ahmedabad, Gujarat',
     points: [
-      'Built responsive, high-performance UIs using React.js & Tailwind CSS, reducing page load time by ~20%.',
-      'Reduced dev cycle time by ~35% by embedding AI tools (Cursor AI, GitHub Copilot) into workflows.',
-      'Architected scalable state management using Redux & Zustand with zero critical data-flow regressions.',
-      'Led modular component library initiative, improving code reuse by ~40% across 3+ product features.',
+      'Built responsive UIs using React.js & Tailwind CSS, contributing to improved page performance.',
+      'Reduced dev cycle time by using AI tools (Cursor AI, GitHub Copilot) in day-to-day workflows.',
+      'Worked with Redux & Zustand for state management across multiple product features.',
+      'Contributed to a modular component library, improving code reuse across 3+ product features.',
     ],
   },
   {
@@ -148,7 +148,7 @@ export default function About() {
       <div className="text-center mb-16">
         <h1 className="section-title">About <span>Me</span></h1>
         <p className="section-sub">
-          Frontend Developer with 1+ year of experience building fast, scalable React.js applications
+          Frontend Developer with 1+ year of experience building React.js applications
         </p>
       </div>
 
@@ -163,12 +163,12 @@ export default function About() {
             <div className="space-y-4 text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
               <p>
                 I'm a <span className="font-semibold" style={{ color: 'var(--text)' }}>Frontend Developer</span> with
-                1+ year of experience building fast, scalable React.js applications. Currently working at{' '}
+                1+ year of experience building React.js, Nextjs applications. Currently working at{' '}
                 <span className="text-primary font-medium">Srashtasoft, Ahmedabad</span>.
               </p>
               <p>
-                Proficient in <span className="font-semibold" style={{ color: 'var(--text)' }}>TypeScript, Tailwind CSS</span>,
-                Redux, Zustand, and AI tools like Cursor AI and GitHub Copilot.
+                I work with <span className="font-semibold" style={{ color: 'var(--text)' }}> JavaScript, TypeScript, Tailwind CSS</span>,
+                Redux, Zustand, and AI tools like Cursor AI and GitHub Copilot to speed up my workflow.
               </p>
               <p>
                 Previously interned at AMSTECH Incorporation as a Java Full Stack Developer. B.Tech CSE from RGPV (CGPA: 7.77).

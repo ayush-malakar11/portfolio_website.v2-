@@ -1,18 +1,10 @@
-import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { useTypewriter } from '../hooks/useTypewriter'
 import { useFadeIn } from '../hooks/useFadeIn'
 import { useTheme } from '../context/ThemeContext'
 
-const ROLES = ['Frontend Developer', 'React.js Developer', 'Next.js Developer', 'TypeScript Engineer']
+const ROLES = ['Frontend Developer']
 
-const StatCard = memo(({ value, label }) => (
-  <div className="text-center">
-    <p className="text-3xl font-bold text-primary">{value}</p>
-    <p className="text-xs mt-1 leading-tight" style={{ color: 'var(--text-muted)' }}>{label}</p>
-  </div>
-))
-StatCard.displayName = 'StatCard'
 
 export default function Home() {
   const typed        = useTypewriter(ROLES)
@@ -52,8 +44,8 @@ export default function Home() {
           </h2>
 
           <p className="text-base leading-relaxed max-w-lg mb-8" style={{ color: 'var(--text-muted)' }}>
-            Frontend Developer with 1+ year of experience building fast, scalable React.js applications.
-            Proficient in TypeScript, Tailwind CSS, and modern state management. Currently at{' '}
+            Frontend Developer with 1+ year of experience building React.js, Nextjs applications.
+            Working with JavaScript, TypeScript, Tailwind CSS, and state management tools. Currently at{' '}
             <span className="font-semibold text-primary">Srashtasoft, Ahmedabad</span>.
           </p>
 
@@ -62,15 +54,7 @@ export default function Home() {
             <Link to="/contact"  className="btn-outline">Hire Me</Link>
           </div>
 
-          {/* Stats */}
-          <div
-            className="flex gap-8 mt-12 pt-8"
-            style={{ borderTop: '1px solid var(--border)' }}
-          >
-            <StatCard value="1+"   label="Year Experience" />
-            <StatCard value="5+"   label="Projects Built"  />
-            <StatCard value="~35%" label="Faster Delivery" />
-          </div>
+
         </div>
 
         {/* Avatar */}
@@ -78,7 +62,7 @@ export default function Home() {
           <div className="w-56 h-56 md:w-72 md:h-72 rounded-full p-1.5
                           bg-gradient-to-br from-primary via-accent to-blue animate-glow">
             <img
-              src="/images/logo.png" alt="Ayush Malakar"
+              src="/images/profile.png" alt="Ayush Malakar"
               className="w-full h-full rounded-full object-cover"
               style={{ border: '4px solid var(--bg)' }}
             />

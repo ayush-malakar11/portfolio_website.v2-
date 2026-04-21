@@ -62,7 +62,7 @@ export default function Navbar() {
         {/* Brand */}
         <NavLink to="/" className="flex items-center gap-3 group">
           <img
-            src="/images/logo.png" alt="logo"
+            src="/images/profile.png" alt="logo"
             className="w-10 h-10 rounded-full object-cover border-2 border-primary
                        group-hover:shadow-lg group-hover:shadow-primary/40 transition-all duration-300"
           />

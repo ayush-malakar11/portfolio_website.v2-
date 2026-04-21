@@ -38,12 +38,12 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3 mb-3">
-            <img src="/images/logo.png" alt="logo"
+            <img src="/images/profile.png" alt="logo"
               className="w-12 h-12 rounded-full border-2 border-primary object-cover" />
             <span className="text-lg font-bold" style={{ color: 'var(--text)' }}>Ayush Malakar</span>
           </div>
           <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-            Frontend Developer building fast, scalable React.js apps with TypeScript & Tailwind CSS.
+            Frontend Developer building fast, scalable React.js, Nextjs apps with JavaScript, TypeScript & Tailwind CSS.
           </p>
         </div>
 
