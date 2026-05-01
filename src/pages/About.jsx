@@ -64,10 +64,10 @@ const EDUCATION = [
 
 const INFO_CARDS = [
   { label: 'Experience',   value: '1+ Year',         icon: '⚡' },
-  { label: 'Location',     value: 'Ahmedabad, GJ',   icon: '📍' },
+  { label: 'Location',     value: ['Ahmedabad (Current)', 'Indore (Native)'], icon: '📍' },
   { label: 'Current Role', value: 'Frontend Dev',    icon: '💻' },
   { label: 'CGPA',         value: '7.77 / 10',       icon: '🎓' },
-  { label: 'AI Tools',     value: 'Cursor, Copilot', icon: '🤖' },
+  { label: 'AI Tools',     value: 'Cursor, Copilot, Claude, ChatGPT', icon: '🤖' },
   { label: 'Availability', value: 'Open to Work',    icon: '✅' },
 ]
 
@@ -188,7 +188,12 @@ export default function About() {
               <div key={label} className="section-card p-4">
                 <span className="text-xl">{icon}</span>
                 <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>{label}</p>
-                <p className="text-sm font-semibold mt-0.5" style={{ color: 'var(--text)' }}>{value}</p>
+                {Array.isArray(value)
+                  ? value.map((v) => (
+                      <p key={v} className="text-sm font-semibold mt-0.5" style={{ color: 'var(--text)' }}>{v}</p>
+                    ))
+                  : <p className="text-sm font-semibold mt-0.5" style={{ color: 'var(--text)' }}>{value}</p>
+                }
               </div>
             ))}
           </div>
