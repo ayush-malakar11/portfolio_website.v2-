@@ -148,7 +148,7 @@ export default function About() {
       <div className="text-center mb-16">
         <h1 className="section-title">About <span>Me</span></h1>
         <p className="section-sub">
-          Frontend Developer with 1+ year of experience building React.js applications
+          Frontend Developer with 1+ year of experience building web applications
         </p>
       </div>
 
