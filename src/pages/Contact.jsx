@@ -6,11 +6,11 @@ import { useFadeIn } from '../hooks/useFadeIn'
 // ─────────────────────────────────────────────────────────────
 // 🔧 CONFIG
 // ─────────────────────────────────────────────────────────────
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID'
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'
-const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY'
-const CLOUDINARY_CLOUD    = 'YOUR_CLOUD_NAME'
-const CLOUDINARY_PRESET   = 'YOUR_UPLOAD_PRESET'
+const EMAILJS_SERVICE_ID  = 'service_qlzoykc'
+const EMAILJS_TEMPLATE_ID = 'template_8y3e1my'
+const EMAILJS_PUBLIC_KEY  = 'V9V2BqtfmIqFrT4x0'
+const CLOUDINARY_CLOUD    = 'dtgbduwnr'
+const CLOUDINARY_PRESET   = 'ml_default'
 
 const MAX_FILES = 5
 const MAX_SIZE  = 20 * 1024 * 1024
