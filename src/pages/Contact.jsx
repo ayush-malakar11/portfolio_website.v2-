@@ -67,8 +67,12 @@ async function uploadToCloudinary(file) {
   const fd = new FormData()
   fd.append('file', file)
   fd.append('upload_preset', CLOUDINARY_PRESET)
+  
+  // Use 'raw' endpoint for non-image files to get direct download links
+  const resourceType = file.type.startsWith('image/') ? 'image' : 'raw'
+  
   const res = await fetch(
-    `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD}/auto/upload`,
+    `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD}/${resourceType}/upload`,
     { method: 'POST', body: fd }
   )
   if (!res.ok) throw new Error('Upload failed')
@@ -301,11 +305,9 @@ export default function Contact() {
         for (let i = 0; i < files.length; i++) {
           setUploadProgress(`Uploading file ${i + 1} of ${files.length}...`)
           const url = await uploadToCloudinary(files[i])
-          // Add fl_attachment flag to force download instead of preview
-          const downloadUrl = url.replace('/upload/', '/upload/fl_attachment/')
-          urls.push(`${files[i].name}: ${downloadUrl}`)
+          urls.push(`${files[i].name}: ${url}`)
         }
-        attachmentLinks = '\n\nAttachments (click to download):\n' + urls.join('\n')
+        attachmentLinks = '\n\nAttachments:\n' + urls.join('\n')
       } catch {
         setStatus('error')
         setTimeout(() => setStatus('idle'), 5000)
