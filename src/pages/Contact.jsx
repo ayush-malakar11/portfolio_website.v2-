@@ -300,9 +300,12 @@ export default function Contact() {
         const urls = []
         for (let i = 0; i < files.length; i++) {
           setUploadProgress(`Uploading file ${i + 1} of ${files.length}...`)
-          urls.push(`${files[i].name}: ${await uploadToCloudinary(files[i])}`)
+          const url = await uploadToCloudinary(files[i])
+          // Add fl_attachment flag to force download instead of preview
+          const downloadUrl = url.replace('/upload/', '/upload/fl_attachment/')
+          urls.push(`${files[i].name}: ${downloadUrl}`)
         }
-        attachmentLinks = '\n\nAttachments:\n' + urls.join('\n')
+        attachmentLinks = '\n\nAttachments (click to download):\n' + urls.join('\n')
       } catch {
         setStatus('error')
         setTimeout(() => setStatus('idle'), 5000)
